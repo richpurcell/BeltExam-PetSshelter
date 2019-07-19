@@ -1,0 +1,45 @@
+<div class="container">
+        <div class="header">
+            <h3>Know of a pet needing a home!</h3>
+            <!-- Validations here-->
+        </div>
+        <div class="box">
+            <form (submit)="newPet()">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Pet Name:</label>
+                    <label *ngIf="!name.valid" for="">   Name must be at least 3 characters {{name.valid | json}}</label>
+                    <input name="new_pet.name" [(ngModel)]="new_pet.name" type="text" required minlength="3" #name='ngModel' class="form-control" id="exampleInputEmail1" placeholder="Pet Name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Pet type:</label>
+                    <label *ngIf="!type.valid" for="">   Type must be at least 3 characters {{type.valid | json}}</label>
+                    <input name="new_pet.type" [(ngModel)]="new_pet.type" type="text" required minlength="3" #type='ngModel' class="form-control" id="exampleInputPassword1" placeholder="Pet Type">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Description:</label>
+                    <label *ngIf="!description.valid" for="">   Description must be at least 3 characters {{description.valid | json}}</label>
+                    <input name="new_pet.description" [(ngModel)]="new_pet.description" type="text" required minlength="3" #description='ngModel' class="form-control" id="exampleInputPassword1" placeholder="Description">
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 col-form-label" for="exampleInputPassword1">Skill 1:</label>
+                    <div class="col-sm-10">
+                        <input name="new_pet.skill1" [(ngModel)]="new_pet.skill1" type="text" class="form-control" id="exampleInputPassword1" placeholder="Description">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 col-form-label" for="exampleInputPassword1">Skill 2:</label>
+                    <div class="col-sm-10">
+                        <input name="new_pet.skill2" [(ngModel)]="new_pet.skill2" type="text" class="form-control" id="exampleInputPassword1" placeholder="Description">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 col-form-label" for="exampleInputPassword1">Skill 3:</label>
+                    <div class="col-sm-10">
+                        <input name="new_pet.skill3" [(ngModel)]="new_pet.skill3" type="text" class="form-control" id="exampleInputPassword1" placeholder="Description">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Add pet</button>
+                <button (click)="goHome()" class="btn btn-primary">Cancel</button> <!-- [routerLink]="['pets']" -->
+            </form>
+        </div>
+    </div>

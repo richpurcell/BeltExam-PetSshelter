@@ -1,0 +1,46 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<div class="container">
+    <h1>Edit Pet</h1>
+    <h3>Edit this pet</h3>
+    <div class="box">
+        <form (submit)="editPet(edit._id)">
+            <div class="form-row">
+                <label for="name">Name:</label>
+                <label *ngIf="!name.valid" for="">Name must be at least 3 characters {{name.valid | json}}</label>
+                <input type="text" class="form-control" name="edit.name" [(ngModel)]="edit.name" required minlength="3" #name='ngModel'>
+            </div>
+            <div class="form-group">
+                <label class="form-group col-md-6" for="type">Type:</label>
+                <label *ngIf="!type.valid" for="">Type must be at least 3 characters {{type.valid | json}}</label>
+                <input type="text" class="form-control" name="edit.type" [(ngModel)]="edit.type" required minlength="3" #type='ngModel'>
+            </div>
+            <div class="form-group">
+                <label class="form-group col-md-6" for="description">Description:</label>
+                <label *ngIf="!description.valid" for="">Description must be at least 3 characters {{description.valid | json}}</label>
+                <input type="text" class="form-control" name="edit.description" [(ngModel)]="edit.description" required minlength="3" #description='ngModel'>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-form-label" for="exampleInputPassword1">Skill 1:</label>
+                <div class="col-sm-10">
+                    <input name="edit.skill1" [(ngModel)]="edit.skill1" type="text" class="form-control" id="exampleInputPassword1" placeholder="Description">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-form-label" for="exampleInputPassword1">Skill 2:</label>
+                <div class="col-sm-10">
+                    <input name="edit.skill2" [(ngModel)]="edit.skill2" type="text" class="form-control" id="exampleInputPassword1" placeholder="Description">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 col-form-label" for="exampleInputPassword1">Skill 3:</label>
+                <div class="col-sm-10">
+                    <input name="edit.skill3" [(ngModel)]="edit.skill3" type="text" class="form-control" id="exampleInputPassword1" placeholder="Description">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Edit</button>
+            <button (click)="goHome()" class="btn btn-primary">Cancel</button>
+        </form>
+    </div>
+</div>
