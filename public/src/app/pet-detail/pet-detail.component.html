@@ -1,23 +1,36 @@
 
 <div class="container">
-    <a [routerLink]="['/pets']">Home</a>
+    <!-- <a [routerLink]="['/pets']">Home</a> -->
     <div class="header">
         <h4>Details about {{pet.name}}</h4>
     </div>
 
     <div class="pets">
         <div class="pet">
-            <div class="box1">
-            <h4>Pet Type:</h4> <h5>{{pet.type}}</h5>
-            </div>
-            <div class="box1">
-            <h4>Description</h4> <h5>{{pet.description}}</h5>
-            </div>
-            <div class="box1">
-            <h4>Skills:</h4> <h5>{{pet.skill1}}</h5>
-            </div>
-            <h5>{{pet.skill2}}</h5>
-            <h5>{{pet.skill3}}</h5>
+            <table class="table table-borderless">
+                <tbody>
+                    <tr>
+                        <th scope="row"><h4>Pet Type:</h4></th>
+                        <td><h5>{{pet.type}}</h5></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h4>Description:</h4></th>
+                        <td><h5>{{pet.description}}</h5></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><h4>Skills:</h4></th>
+                        <td><h5>{{pet.skill1}}</h5></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> <h5>{{pet.skill2}}</h5></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> <h5>{{pet.skill3}}</h5></td>
+                    </tr>
+                </tbody>
+            </table>
             <!-- <button class="btn btn-primary" [routerLink]="['/edit',pet.id]">Edit</button> -->
             <button (click)="deletePet(pet._id)" class="btn btn-primary">Adopt</button>
         </div>
